@@ -76,7 +76,7 @@ export default function App()
                 { isDesktop && started && (
                     <>
                         <PointerLockControls />
-                        {/* <Perf /> */}
+                        <Perf />
                     </>
                 )}
             </Canvas>

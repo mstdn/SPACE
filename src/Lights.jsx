@@ -1,4 +1,4 @@
-import { Sky, Environment, Stars } from '@react-three/drei'
+import { Environment, Stars } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
@@ -7,7 +7,6 @@ export default function Lights(props)
     const { char } = props
     const light = useRef()
     const stars = useRef()
-    // const sky = useRef()
 
     useFrame(() =>
     {
@@ -27,30 +26,15 @@ export default function Lights(props)
             
             light.current.target.updateMatrixWorld()
 
-
             // Make stars follow the player
             stars.current.position.z = charPosition.z + 1 - 4
             stars.current.position.x = charPosition.x + 1 - 4
             stars.current.position.y = charPosition.y + 5
-            console.log(stars.current.position)
-
-            // pointRef.current.position.z = charPosition.z + 2
-            // pointRef.current.position.x = charPosition.x + 2
-            // pointRef.current.position.y = charPosition.y + 2
-
-            // pointRef.current.updateMatrixWorld()
-            
-            // console.log(pointRef.current.position)
-            
-            // sky.current.position.z = charPosition.z + 1 - 4
-            // sky.current.position.x = charPosition.x + 1 - 4
-            // // sky.current.position.y = charPosition.y + 1 - 4
-            // sky.current.updateMatrixWorld()
+            // console.log(stars.current.position)
         }
     })
 
     return <>
-        
         <Environment
             // preset='sunset' 
             // files="./assets/images/map.hdr"
@@ -74,7 +58,7 @@ export default function Lights(props)
             castShadow
             // color={ 'blue' }
             position={ [ 1, 8, 1 ] }
-            intensity={ 0.9 }
+            intensity={ 0.5 }
             shadow-camera-near={ 0.1 }
             shadow-camera-far={ 200 }
             shadow-camera-top={ 200 }
@@ -86,10 +70,5 @@ export default function Lights(props)
             shadow-mapSize-height={ 2048 }
             // shadow-mapSize={ [ 1024, 1024 ] }
         />
-        {/* <Sky
-            // ref={ sky }
-            color={ 'blue' }
-            sunPosition={ [ 1, 4, 1 ] }
-        /> */}
     </>
 }
