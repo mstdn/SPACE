@@ -21,7 +21,7 @@ export default function Lights(props)
             light.current.position.x = charPosition.x + 1 - 4
             light.current.target.position.x = charPosition.x - 4
             
-            light.current.position.y = charPosition.y + 5 
+            light.current.position.y = charPosition.y + 6
             light.current.target.position.y = charPosition.y
             
             light.current.target.updateMatrixWorld()
@@ -58,7 +58,7 @@ export default function Lights(props)
             castShadow
             // color={ 'blue' }
             position={ [ 1, 8, 1 ] }
-            intensity={ 0.5 }
+            intensity={ 1 }
             shadow-camera-near={ 0.1 }
             shadow-camera-far={ 500 }
             shadow-camera-top={ 500 }

@@ -1,5 +1,4 @@
 import { RigidBody } from "@react-three/rapier"
-import { Ground } from "./Ground"
 import { Platform1 } from "./world/Platform-1"
 import { Platform2 } from "./world/Platform-2"
 import { Platform3 } from "./world/Platform-3"
@@ -10,6 +9,8 @@ import { Computer } from "./world/Computer"
 import { Tank } from "./world/Tank"
 import { Building1 } from "./world/Building-1"
 import { MechFox } from "./characters/MechFox"
+import { Dome } from "./world/Dome"
+import { Shuttle } from "./world/Shuttle"
 
 
 export default function World(props)
@@ -43,9 +44,7 @@ export default function World(props)
             >
                 Try to reach the thingy
             </Text>
-            <MechFox 
-                char={ char }
-            />
+            <MechFox char={ char } />
 
             {/* Second platform */}
             <RigidBody
@@ -152,15 +151,73 @@ export default function World(props)
 
             {/* Sixth platform */}
             <group>
+                {/* Bridge */}
                 <RigidBody
                     type="fixed"
                     colliders="trimesh"
                     gravityScale={ 0.1 }
                     friction={ 1 }
-                    position={ [ 120, 10, 106.9 ] }
+                    position={ [ 114.7, 10, 100 ] }
+                    scale={ 10 }
+                >
+                    <Platform3 rotation-y={ Math.PI * 1 } />
+                </RigidBody>
+                {/* Platform */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 147, 10, 100 ] }
                     scale={ 12 }
                 >
                     <Platform1 />
+                </RigidBody>
+
+                {/* Dome */}
+                <RigidBody
+                    type="fixed"
+                    colliders="hull"
+                    position={ [ 147, 10, 100 ] }
+                    scale={ 1.5 }
+                >
+                    <Dome />
+                </RigidBody>
+            </group>
+
+            <group>
+                {/* Bridge */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 147, 10, 132.1] }
+                    scale={ 10 }
+                >
+                    <Platform3 rotation-y={ Math.PI * 1.5 } />
+                </RigidBody>
+                
+                {/* Seventh platform */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 147, 10, 170 ] }
+                    scale={ 10 }
+                >
+                    <Platform2 rotation-y={ Math.PI * 0.5 } />
+                </RigidBody>
+
+                {/* Space Shuttle */}
+                <RigidBody
+                    type="fixed"
+                    colliders="hull"
+                    position={ [ 147, 32.1, 177 ] }
+                    scale={ 1 }
+                >
+                    <Shuttle rotation-y={ Math.PI * 1.1 } />
                 </RigidBody>
             </group>
 
