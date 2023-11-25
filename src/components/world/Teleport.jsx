@@ -21,6 +21,8 @@ export function Teleport(props)
         if(distance < 3)
         {
           char.current.setTranslation( { x: 80, y: 15, z: 106 } )
+          char.current.setLinvel( { x: 0, y: 0, z: 0 } )
+          char.current.setAngvel( { x: 0, y: 0, z: 0 } )
         }
 
       }
