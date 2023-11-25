@@ -11,6 +11,7 @@ import { Building1 } from "./world/Building-1"
 import { MechFox } from "./characters/MechFox"
 import { Dome } from "./world/Dome"
 import { Shuttle } from "./world/Shuttle"
+import { Bar } from "./world/Bar"
 
 
 export default function World(props)
@@ -197,6 +198,18 @@ export default function World(props)
                 >
                     <Platform3 rotation-y={ Math.PI * 1.5 } />
                 </RigidBody>
+
+                {/* Bridge */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 147, 10, 67.99] }
+                    scale={ 10 }
+                >
+                    <Platform3 rotation-y={ Math.PI * 0.5 } />
+                </RigidBody>
                 
                 {/* Seventh platform */}
                 <RigidBody
@@ -219,6 +232,39 @@ export default function World(props)
                 >
                     <Shuttle rotation-y={ Math.PI * 1.1 } />
                 </RigidBody>
+
+                {/* Eigth platform */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 147, 10, 29.7 ] }
+                    scale={ 10 }
+                >
+                    <Platform2 rotation-y={ Math.PI * 1.5 } />
+                </RigidBody>
+
+                {/* Bar */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    position={ [ 154.8, 14, 34 ] }
+                    scale={ 4 }
+                >
+                    <Bar rotation-y={ Math.PI * 1 } />
+                </RigidBody>
+
+                {/* Bar */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    position={ [ 154.8, 14, 24.5 ] }
+                    scale={ 4 }
+                >
+                    <Bar rotation-y={ Math.PI * 1 } />
+                </RigidBody>
+                
             </group>
 
         </group>
