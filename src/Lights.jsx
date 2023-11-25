@@ -1,4 +1,4 @@
-import { Environment, Stars } from '@react-three/drei'
+import { ContactShadows, Environment, Stars } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
@@ -60,11 +60,11 @@ export default function Lights(props)
             position={ [ 1, 8, 1 ] }
             intensity={ 0.5 }
             shadow-camera-near={ 0.1 }
-            shadow-camera-far={ 200 }
-            shadow-camera-top={ 200 }
-            shadow-camera-right={ 200 }
-            shadow-camera-bottom={ - 200 }
-            shadow-camera-left={ - 200 }
+            shadow-camera-far={ 500 }
+            shadow-camera-top={ 500 }
+            shadow-camera-right={ 500 }
+            shadow-camera-bottom={ - 500 }
+            shadow-camera-left={ - 500 }
             shadow-bias={ - 0.001 }
             shadow-mapSize-width={ 2048 }
             shadow-mapSize-height={ 2048 }

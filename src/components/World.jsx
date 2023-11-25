@@ -8,6 +8,8 @@ import { Platform4 } from "./world/Platform-4"
 import { Teleport } from "./world/Teleport"
 import { Computer } from "./world/Computer"
 import { Tank } from "./world/Tank"
+import { Building1 } from "./world/Building-1"
+import { MechFox } from "./characters/MechFox"
 
 
 export default function World(props)
@@ -28,6 +30,22 @@ export default function World(props)
             >
                 <Platform1 />
             </RigidBody>
+            <Text
+                font="./assets/fonts/tron.ttf"
+                fontSize={ 0.9 }
+                maxWidth={ 4 }
+                lineHeight={ 1 }
+                letterSpacing={ 0.05 }
+                textAlign="center"
+                position={ [ - 3, 2.5, 7 ] }
+                rotation-y={ Math.PI * 0.9 }
+                color="white"
+            >
+                Try to reach the thingy
+            </Text>
+            <MechFox 
+                char={ char }
+            />
 
             {/* Second platform */}
             <RigidBody
@@ -65,9 +83,13 @@ export default function World(props)
                 >
                     <Platform3 rotation-y={ Math.PI * 0.5 } />
                 </RigidBody>
+
                 {/* Tanks */}
                 <Tank position={ [ 3.4, 0.4, 42 ] } />
                 <Tank position={ [ 1.4, 0.4, 44 ] } rotation-y={ Math.PI * 0.7 } />
+
+                {/* Teleport 1 */}
+                <Teleport char={ char } />
             </group>
 
             <group>
@@ -106,39 +128,42 @@ export default function World(props)
                 <Tank position={ [ - 17, 0.4, 123 ] } rotation-y={ Math.PI * 1.2 } />
             </group>
 
-            {/* Fifth platform */}
-            <RigidBody
-                type="fixed"
-                colliders="trimesh"
-                gravityScale={ 0.1 }
-                friction={ 1 }
-                position={ [ 80, 10, 106.9 ] }
-                scale={ 8 }
-            >
-                <Platform4 rotation-y={ Math.PI * 1 } />
-            </RigidBody>
-
-            
             <group>
-                <Text
-                    font="./assets/fonts/tron.ttf"
-                    fontSize={ 0.9 }
-                    maxWidth={ 4 }
-                    lineHeight={ 1 }
-                    letterSpacing={ 0.05 }
-                    textAlign="center"
-                    position={ [ - 3, 2.5, 7 ] }
-                    rotation-y={ Math.PI * 0.9 }
-                    color="white"
+                {/* Fifth platform */}
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 80, 10, 106.9 ] }
+                    scale={ 8 }
                 >
-                    Try to reach the thingy
-                </Text>
+                    <Platform4 rotation-y={ Math.PI * 1 } />
+                </RigidBody>
+                <RigidBody
+                    type="fixed"
+                    colliders="hull"
+                    position={ [ 91, 10, 111 ] }
+                    scale={ 1.8 }
+                >
+                    <Building1 rotation-y={ Math.PI * 1 } />
+                </RigidBody>
             </group>
 
-            {/* Teleport 1 */}
-                <Teleport char={ char } />
-            {/* <Morty char={ char } /> */}
-            {/* <Ground /> */}
+            {/* Sixth platform */}
+            <group>
+                <RigidBody
+                    type="fixed"
+                    colliders="trimesh"
+                    gravityScale={ 0.1 }
+                    friction={ 1 }
+                    position={ [ 120, 10, 106.9 ] }
+                    scale={ 12 }
+                >
+                    <Platform1 />
+                </RigidBody>
+            </group>
+
         </group>
     </>
     )
