@@ -276,6 +276,9 @@ export default function Platforms()
             <Platform3 position={ [ 147, 10, 67.99 ] } scale={ 10 } rotation-y={ Math.PI * 0.5 } />
             <Platform4 position={ [ - 10, 0, 106.9 ] } scale={ 10 } rotation-y={ Math.PI * 1 } />
             <Platform4 position={ [ 80, 10, 106.9 ] } scale={ 8 } rotation-y={ Math.PI * 1 } />
+            <Platform3 position={ [ 179, 10, 98 ] } scale={ 10 } rotation-y={ Math.PI * 1 } />
+            <Platform3 position={ [ 217.9, 10, 98.85 ] } scale={ 10 } rotation-y={ Math.PI * 2 } />
+            <Platform1 position={ [ 247.75, 10, 98.85 ] } scale={ 10 } rotation-y={ Math.PI * 0.5 } />
         </>
     )
 }
