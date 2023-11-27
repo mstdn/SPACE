@@ -53,7 +53,7 @@ const Player = forwardRef((props, ref) =>
                 jumpVel={ 10 }
                 turnSpeed={ 10 }
                 // jumpForceToGroundMult={ 10 }
-                gravityScale={ 0.9 }
+                gravityScale={ 0.5 }
                 autoBalanceDampingOnY={ 0.01 }
                 // characterInitDir={ 160 }
                 // camInitDir={ Math.PI * 1 }
