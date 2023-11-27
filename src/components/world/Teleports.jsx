@@ -69,10 +69,11 @@ export default function Teleports(props)
                 scale={ 1 } 
                 char={ char } 
             />
+
             <Teleport 
-                position={ [ 7, 0.3, 0 ] } 
-                from={ [ 7, 0.3, 0 ] } 
-                target={ { x: 80, y: 15, z: 106 } } 
+                position={ [ 44, 0.3, 0 ] } 
+                from={ [ 44, 0.3, 0 ] } 
+                target={ { x: 145, y: 20, z: 31 } } 
                 scale={ 1 } 
                 char={ char } 
             />
