@@ -885,6 +885,262 @@ const SaturnV = (props) =>
 }
 
 
+/**
+* FalconHeavy
+* */
+const FalconHeavy = (props) => 
+{
+    const { nodes, materials } = useGLTF("./assets/models/world/falcon-heavy.glb")
+    return (
+        <>
+            <RigidBody
+                colliders="hull"
+                gravityScale={ 0.0001 }
+                friction={ 0.0001 }
+            >
+                <group {...props} dispose={null}>
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1177551466.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1794313008.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group664186064.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1092526527.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1288991087.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1244545237.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group327409806.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1842216789.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group318079340.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1019908090.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group248325220.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1688682111.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1275527013.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group896255849.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group2022321159.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1424326644.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1673725909.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group917770634.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1017733882.geometry}
+                        material={materials.mat23}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1317332132.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1529587663.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group613694139.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1053171569.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group770393545.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1250560570.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group2146284285.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group387247641.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1336124684.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1705044733.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1266683896.geometry}
+                        material={materials.mat24}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group603785919.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1083589953.geometry}
+                        material={materials.mat24}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.group1589445932.geometry}
+                        material={materials.mat24}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh379271175.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh379271175_1.geometry}
+                        material={materials.mat22}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh440554346.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh440554346_1.geometry}
+                        material={materials.mat22}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh315161725.geometry}
+                        material={materials.mat21}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.mesh315161725_1.geometry}
+                        material={materials.mat22}
+                    />
+                </group>
+            </RigidBody>
+        </>
+    )
+}
+
+
+
 export default function Structures()
 {
     return(
@@ -903,6 +1159,7 @@ export default function Structures()
             <Tank position={ [ - 17, 0.4, 123 ] } scale={ 1.2 } rotation-y={ Math.PI * 1.6 } />
 
             <SaturnV position={ [ - 136, 11, 85 ] } scale={ 30 } rotation-y={ Math.PI * 1.5 } />
+            <FalconHeavy position={ [81, 50, 50 ] } scale={ 5 } rotation-y={ Math.PI * 1.5 } />
         </>
     )
 }
