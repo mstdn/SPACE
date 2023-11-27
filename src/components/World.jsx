@@ -12,11 +12,11 @@ export default function World(props)
     return(
     <>
         <group>
+            <Platforms />
             <Texts />
             <Teleports char={ char } />
             <NPCs char={ char } />
             <Structures />
-            <Platforms />
         </group>
     </>
     )

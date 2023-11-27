@@ -3,6 +3,7 @@ import Lights from '../Lights.jsx'
 import Player from './Player.jsx'
 import Effects from './Effects.jsx'
 import { useRef } from 'react'
+import { Ground } from './world/Ground.jsx'
 
 export default function Experience()
 {
@@ -10,10 +11,11 @@ export default function Experience()
 
     return(
     <>
-        <Effects />
-        <Lights char={ ref } />
+        <Ground />
         <Player ref={ ref } />
         <World char={ ref } />
+        <Lights char={ ref } />
+        <Effects />
     </>
     )
 }

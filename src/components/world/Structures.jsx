@@ -376,10 +376,10 @@ const Shuttle = (props) =>
     const { nodes, materials } = useGLTF("./assets/models/world/shuttle.glb")
     return (
         <>
-            <RigidBody
+            {/* <RigidBody
                 type="fixed"
                 colliders="hull"
-            >
+            > */}
                 <group  {...props} dispose={null}>
                     <mesh
                         castShadow
@@ -388,7 +388,7 @@ const Shuttle = (props) =>
                         material={materials.SpaceShuttle_mat}
                     />
                 </group>
-            </RigidBody>
+            {/* </RigidBody> */}
         </>
     )
 }
@@ -511,12 +511,12 @@ const SaturnV = (props) =>
     const { nodes, materials } = useGLTF("./assets/models/world/saturn-v.glb")
     return (
         <>
-            <RigidBody
+            {/* <RigidBody
                 // type="fixed"
                 colliders="trimesh"
                 gravityScale={ 0.0001 }
                 friction={ 0.0001 }
-            >
+            > */}
                 <group {...props} dispose={null}>
                     <mesh
                         castShadow
@@ -879,7 +879,7 @@ const SaturnV = (props) =>
                         material={materials.mat21}
                     />
                 </group>
-            </RigidBody>
+            {/* </RigidBody> */}
         </>
     )
 }
