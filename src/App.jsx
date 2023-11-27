@@ -63,7 +63,7 @@ export default function App()
                         // debug
                         timeStep="vary"
                         paused={ paused }
-                        gravity={ [ 0, - 5.8, 0 ] }
+                        // gravity={ [ 0, - 5.8, 0 ] }
                         >
                         <Suspense>
                             { started && (
