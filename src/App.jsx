@@ -1,9 +1,10 @@
 import { Canvas } from '@react-three/fiber'
 import Experience from './components/Experience.jsx'
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Physics } from '@react-three/rapier'
 import { KeyboardControls, Loader, PointerLockControls, Preload } from '@react-three/drei'
 import { EcctrlJoystick } from 'ecctrl'
+import { BoxGeometry, CylinderGeometry, Euler, MeshBasicMaterial, SphereGeometry, Vector3 } from 'three'
 import { isMobile, isDesktop } from 'react-device-detect'
 import Interface from './components/Interface.jsx'
 import { Perf } from 'r3f-perf'
@@ -12,6 +13,11 @@ import MobileInterface from './components/MobileInterface.jsx'
 
 export default function App()
 {
+    const cylinderGeometry = useMemo(() => new CylinderGeometry(2.3, 2.1, 0.3, 32, 1), [])
+    const sphereGeometry = useMemo(() => new SphereGeometry(1.4, 32, 8), [])
+    const boxGeometry = useMemo(() => new BoxGeometry(1, 1, 1), [])
+    const activeMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, wireframe: false }), [])
+    const passiveMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.1 }), [])
     const [ started, setStarted ] = useState(false)
     const [ paused, setPaused ] = useState(false)
     useEffect(() => 
@@ -50,7 +56,25 @@ export default function App()
             />
         ) }
         { isMobile && started && (
-            <EcctrlJoystick />
+            <EcctrlJoystick 
+                joystickBaseProps={{
+                    geometry: cylinderGeometry,
+                    material: passiveMaterial
+                }}
+                joystickStickProps={{
+                    material: passiveMaterial
+                }}
+                joystickHandleProps={{
+                    geometry: sphereGeometry,
+                    rotation: new Euler(Math.PI * 0.5, 0, 0),
+                    material: activeMaterial
+                }}
+                buttonLargeBaseProps={{
+                    scale: new Vector3(4, 4, 4),
+                    geometry: boxGeometry,
+                    material: passiveMaterial
+                }}
+            />
         ) }
         <KeyboardControls map={ keyboardMap }>
             <Canvas
