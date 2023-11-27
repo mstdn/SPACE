@@ -34,7 +34,7 @@ const Platform1 = (props) =>
             <RigidBody
                 type="fixed"
                 colliders="trimesh"
-                gravityScale={ 0.1 }
+                gravityScale={ 1 }
                 friction={ 0.1 }
             >
                 <group  {...props} dispose={null}>

@@ -893,11 +893,11 @@ const FalconHeavy = (props) =>
     const { nodes, materials } = useGLTF("./assets/models/world/falcon-heavy.glb")
     return (
         <>
-            <RigidBody
+            {/* <RigidBody
                 colliders="hull"
                 gravityScale={ 0.0001 }
                 friction={ 0.0001 }
-            >
+            > */}
                 <group {...props} dispose={null}>
                     <mesh
                         castShadow
@@ -1134,7 +1134,7 @@ const FalconHeavy = (props) =>
                         material={materials.mat22}
                     />
                 </group>
-            </RigidBody>
+            {/* </RigidBody> */}
         </>
     )
 }

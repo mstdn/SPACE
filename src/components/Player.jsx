@@ -47,13 +47,13 @@ const Player = forwardRef((props, ref) =>
                 camMaxDis={ - 30 } // Maximum camera distance
                 camMinDis={ - 0.1 } // Minimum camera distance
                 animated={ true }
-                position={ [ 0, 10, 0 ] }
+                position={ [ 0, 20, 0 ] }
                 maxVelLimit={ 3 }
                 sprintMult={ 3 }
-                jumpVel={ 10 }
+                jumpVel={ 6 }
                 turnSpeed={ 10 }
                 // jumpForceToGroundMult={ 10 }
-                gravityScale={ 0.5 }
+                gravityScale={ 1 }
                 autoBalanceDampingOnY={ 0.01 }
                 // characterInitDir={ 160 }
                 // camInitDir={ Math.PI * 1 }

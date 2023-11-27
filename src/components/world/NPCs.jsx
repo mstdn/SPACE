@@ -819,7 +819,7 @@ export default function NPCs(props)
         <>
             <MechFox 
                 position={ [ 6, 0.4, 6 ] } 
-                pos={ [ 6, 0.4, 6 ] } 
+                pos={ [ 6, 0.5, 6 ] } 
                 rotation-y={ Math.PI * 1.2 } 
                 char={ char } 
             />
