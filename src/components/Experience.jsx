@@ -5,8 +5,9 @@ import Effects from './Effects.jsx'
 import { useRef } from 'react'
 import { Ground } from './world/Ground.jsx'
 
-export default function Experience()
+export default function Experience({ downgradedPerformance = false })
 {
+
     const ref = useRef()
 
     return(
@@ -14,8 +15,13 @@ export default function Experience()
         <Ground />
         <Player ref={ ref } />
         <World char={ ref } />
-        <Lights char={ ref } />
-        <Effects />
+        <Lights 
+            char={ ref } 
+            downgradedPerformance={ downgradedPerformance } 
+        />
+        { !downgradedPerformance && (
+            <Effects />
+        )}
     </>
     )
 }

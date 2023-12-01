@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import Experience from './components/Experience.jsx'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Physics } from '@react-three/rapier'
-import { KeyboardControls, Loader, PointerLockControls, Preload } from '@react-three/drei'
+import { KeyboardControls, Loader, PointerLockControls, Preload, PerformanceMonitor } from '@react-three/drei'
 import { EcctrlJoystick } from 'ecctrl'
 import { BoxGeometry, CylinderGeometry, Euler, MeshBasicMaterial, SphereGeometry, Vector3 } from 'three'
 import { isMobile, isDesktop } from 'react-device-detect'
@@ -13,13 +13,16 @@ import MobileInterface from './components/MobileInterface.jsx'
 
 export default function App()
 {
+    const [ downgradedPerformance, setDowngradedPerformance ] = useState(false)
+    const [ started, setStarted ] = useState(false)
+    const [ paused, setPaused ] = useState(false)
+
     const cylinderGeometry = useMemo(() => new CylinderGeometry(2.3, 2.1, 0.3, 32, 1), [])
     const sphereGeometry = useMemo(() => new SphereGeometry(1.4, 32, 8), [])
     const boxGeometry = useMemo(() => new BoxGeometry(1, 1, 1), [])
     const activeMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, wireframe: false }), [])
     const passiveMaterial = useMemo(() => new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.1 }), [])
-    const [ started, setStarted ] = useState(false)
-    const [ paused, setPaused ] = useState(false)
+    
     useEffect(() => 
     {
         document.addEventListener("visibilitychange", () => 
@@ -89,10 +92,16 @@ export default function App()
                         paused={ paused }
                         // gravity={ [ 0, - 5.8, 0 ] }
                         >
+                        <PerformanceMonitor
+                            onDecline={(fps) => 
+                            {
+                                setDowngradedPerformance(true)
+                            }}
+                        />
                         <Suspense>
                             { started && (
                                 <>
-                                    <Experience />
+                                    <Experience downgradedPerformance={ downgradedPerformance } />
                                     <Preload all />
                                 </>
                             )}
@@ -101,7 +110,7 @@ export default function App()
                 { isDesktop && started && (
                     <>
                         <PointerLockControls />
-                        <Perf />
+                        {/* <Perf /> */}
                     </>
                 )}
             </Canvas>

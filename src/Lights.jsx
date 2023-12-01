@@ -4,7 +4,7 @@ import { useRef } from 'react'
 
 export default function Lights(props)
 {
-    const { char } = props
+    const { char, downgradedPerformance } = props
     const light = useRef()
     const stars = useRef()
 
@@ -55,7 +55,7 @@ export default function Lights(props)
         />
         <directionalLight
             ref={ light }
-            castShadow
+            castShadow={ !downgradedPerformance }
             // color={ 'blue' }
             position={ [ 1, 8, 1 ] }
             intensity={ 1 }
